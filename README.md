@@ -6,13 +6,13 @@ When prompted enter the number of rows and then the number of columns. Then list
 
 
 ## Finished Operations
--Transpose
+- Transpose
 
 ## Operations to Add
--Add (In progress)
--Subtract
--Multiply
--Inverse
--Get Determinant
--Gaussian Elimination
--Cramer's Rule
+- Add (In progress)
+- Subtract
+- Multiply
+- Inverse
+- Get Determinant
+- Gaussian Elimination
+- Cramer's Rule
