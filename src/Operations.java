@@ -11,7 +11,7 @@ public class Operations {
                 added.getMatrix()[i][j] = m1.getMatrix()[i][j] + m2.getMatrix()[i][j];
             }
         }
-        System.out.println(added);
+       added.display();
         return added;
     }
 }

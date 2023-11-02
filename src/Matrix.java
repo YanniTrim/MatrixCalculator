@@ -52,22 +52,22 @@ public class Matrix {
 
     public void transpose() {
         Matrix tranposed = new Matrix(colCount, rowCount);
-        for (int i = 0; i < rowCount; i++) {
-            for (int j = 0; j < colCount; j++) {
-                tranposed.matrix[j][i] = this.matrix[i][j];
+        for (int i = 0; i < rowCount; i++) {        //iterate through rows
+            for (int j = 0; j < colCount; j++) {    //iterate through columns
+                tranposed.matrix[j][i] = this.matrix[i][j]; // put values in new matrix that have flipped row and column indices
             }
         }
         tranposed.display();
     }
 
-    public static Matrix framer() {
+    public static Matrix builder() {             // Creates new matrix
         Scanner inputer = new Scanner(System.in);
         System.out.println("How many rows: ");
-        Integer rowInput = inputer.nextInt();
+        int rowInput = inputer.nextInt();
         System.out.println("How many columns: ");
-        Integer columnInput = inputer.nextInt();
-        Matrix m = new Matrix(rowInput, columnInput);
-        m.matrixFiller();
+        int columnInput = inputer.nextInt();
+        Matrix m = new Matrix(rowInput, columnInput); // Makes an empty matrix based on row and column inputs
+        m.matrixFiller(); // calls method to fill in values of matrix
         m.display();
         return m;
 

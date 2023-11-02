@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner inputer = new Scanner(System.in);
 
-        Matrix m1 = Matrix.framer();
+        Matrix m1 = Matrix.builder();
 
         boolean doneConstructing = false;
         while (!doneConstructing) {
@@ -11,8 +11,18 @@ public class Main {
             String answer = inputer.nextLine();
             if (answer.equals("Y")) {
                 System.out.println("Matrix 2:");
-                Matrix m2 = Matrix.framer();
-                Operations.add(m1, m2);
+                Matrix m2 = Matrix.builder();
+
+                boolean doneOperating = false;
+                while (!doneOperating) {
+                    System.out.println("What Operation? (Add or Subtract or DONE)");
+                    String newAnswer = inputer.nextLine();
+                    if (newAnswer.equals("Add")) {
+                        Operations.add(m1, m2);
+                    } else if (newAnswer.equals("DONE")) {
+                        doneOperating = true;
+                    }
+                }
                 doneConstructing = true;
             } else if (answer.equals("N")) {
                 doneConstructing = true;
@@ -22,7 +32,6 @@ public class Main {
             }
         }
 
-        m1.transpose();
 
 
     }
