@@ -72,4 +72,34 @@ public class Matrix {
         return m;
 
     }
+
+    public Matrix add(Matrix m2) {
+        if (this.getRowCount() != m2.getRowCount() && this.getColCount() != m2.getColCount()) {
+            System.out.println("ERROR - Matrix of different sizes");
+            return null;
+        }
+        Matrix added = new Matrix(this.getRowCount(), this.getColCount());
+        for (int i = 0; i < this.getRowCount(); i++) {
+            for (int j = 0; j < this.getColCount(); j++) {
+                added.getMatrix()[i][j] = this.getMatrix()[i][j] + m2.getMatrix()[i][j];
+            }
+        }
+        added.display();
+        return added;
+    }
+
+    public Matrix subtract(Matrix m2) {
+        if (this.getRowCount() != m2.getRowCount() && this.getColCount() != m2.getColCount()) {
+            System.out.println("ERROR - Matrix of different sizes");
+            return null;
+        }
+        Matrix subbed = new Matrix(this.getRowCount(), this.getColCount());
+        for (int i = 0; i < this.getRowCount(); i++) {
+            for (int j = 0; j < this.getColCount(); j++) {
+                subbed.getMatrix()[i][j] = this.getMatrix()[i][j] - m2.getMatrix()[i][j];
+            }
+        }
+        subbed.display();
+        return subbed;
+    }
 }

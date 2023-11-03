@@ -18,7 +18,9 @@ public class Main {
                     System.out.println("What Operation? (Add or Subtract or DONE)");
                     String newAnswer = inputer.nextLine();
                     if (newAnswer.equals("Add")) {
-                        Operations.add(m1, m2);
+                        m1.add(m2);
+                    } else if (newAnswer.equals("Subtract")) {
+                        m1.subtract(m2);
                     } else if (newAnswer.equals("DONE")) {
                         doneOperating = true;
                     }
