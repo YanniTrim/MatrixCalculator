@@ -88,6 +88,27 @@ public class Matrix {
         return added;
     }
 
+    public Matrix multiply(Matrix m2) {
+        if (this.getColCount()!=m2.getRowCount()) {
+            System.out.println("ERROR - Matrices not compatible");
+            return null;
+        }
+        Matrix multiplied = new Matrix(this.getRowCount(), m2.getColCount()); // builds new matrix
+        for (int i = 0; i < this.getRowCount(); i++) { // for each row in m1
+            for (int j = 0; j < m2.getColCount(); j++) { // for each column in m2 -> iterate through each column to get row of products
+                int dProd = 0;
+                for (int k = 0; k < this.getColCount(); k++) { // for each column in m1 -> iterate for one dot product
+                    dProd += this.matrix[i][k]*m2.matrix[k][j];
+                }
+                //once done adding dot products
+                multiplied.matrix[i][j] = dProd;
+            }
+        }
+        multiplied.display();
+        return multiplied;
+
+    }
+
     public Matrix subtract(Matrix m2) {
         if (this.getRowCount() != m2.getRowCount() && this.getColCount() != m2.getColCount()) {
             System.out.println("ERROR - Matrix of different sizes");

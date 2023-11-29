@@ -15,7 +15,7 @@ public class Main {
 
                 boolean doneOperating = false;
                 while (!doneOperating) {
-                    System.out.println("What Operation? (Add or Subtract or DONE)");
+                    System.out.println("What Operation? (Add, Subtract, Multiply or DONE)");
                     String newAnswer = inputer.nextLine();
                     if (newAnswer.equals("Add")) {
                         m1.add(m2);
@@ -23,6 +23,8 @@ public class Main {
                         m1.subtract(m2);
                     } else if (newAnswer.equals("DONE")) {
                         doneOperating = true;
+                    } else if (newAnswer.equals("Multiply")) {
+                        m1.multiply(m2);
                     }
                 }
                 doneConstructing = true;
