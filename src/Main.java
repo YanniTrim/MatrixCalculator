@@ -15,7 +15,7 @@ public class Main {
 
                 boolean doneOperating = false;
                 while (!doneOperating) {
-                    System.out.println("What Operation? (Add, Subtract, Multiply or DONE)");
+                    System.out.println("What Operation? (Add, Subtract, Multiply, Scalar Multiply or DONE)");
                     String newAnswer = inputer.nextLine();
                     if (newAnswer.equals("Add")) {
                         m1.add(m2);
@@ -25,6 +25,14 @@ public class Main {
                         doneOperating = true;
                     } else if (newAnswer.equals("Multiply")) {
                         m1.multiply(m2);
+                    } else if (newAnswer.equals("Scalar Multiply")) {
+                        System.out.println("Multiply by what integer?");
+                        try {
+                            int multiple = Integer.parseInt(inputer.nextLine());
+                            m1.scalarMultiply(multiple);
+                        } catch (Exception e) {
+                            System.out.println("Invalid Value - Try Again");
+                        }
                     }
                 }
                 doneConstructing = true;

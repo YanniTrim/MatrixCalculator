@@ -109,6 +109,17 @@ public class Matrix {
 
     }
 
+    public Matrix scalarMultiply(int multiple) {
+        Matrix scalared = new Matrix(this.getRowCount(), this.getColCount());
+        for (int i = 0; i < this.getRowCount(); i++) {
+            for (int j = 0; j < this.getColCount(); j++) {
+                scalared.matrix[i][j] = this.matrix[i][j]*multiple;
+            }
+        }
+        scalared.display();
+        return scalared;
+    }
+
     public Matrix subtract(Matrix m2) {
         if (this.getRowCount() != m2.getRowCount() && this.getColCount() != m2.getColCount()) {
             System.out.println("ERROR - Matrix of different sizes");
