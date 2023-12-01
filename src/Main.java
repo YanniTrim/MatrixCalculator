@@ -37,6 +37,24 @@ public class Main {
                 }
                 doneConstructing = true;
             } else if (answer.equals("N")) {
+                boolean doneOperating = false;
+                while (!doneOperating) {
+                    System.out.println("What Operation? (Transpose, Scalar Multiply or DONE)");
+                    String newAnswer = inputer.nextLine();
+                    if (newAnswer.equals("Transpose")) {
+                        m1.transpose();
+                    } else if (newAnswer.equals("Scalar Multiply")) {
+                        System.out.println("Multiply by what integer?");
+                        try {
+                            int multiple = Integer.parseInt(inputer.nextLine());
+                            m1.scalarMultiply(multiple);
+                        } catch (Exception e) {
+                            System.out.println("Invalid Value - Try Again");
+                        }
+                    } else if (newAnswer.equals("DONE")) {
+                        doneOperating = true;
+                    }
+                }
                 doneConstructing = true;
             } else {
                 System.out.println("Invalid Input - Try Again");
